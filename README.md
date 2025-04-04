@@ -4,6 +4,14 @@ A full-featured Doctor Appointment Booking System built using the **MERN stack**
 
 ---
 
+## 🌐 Deployed Links
+
+**Client Link:** https://doctor-appointment-frontend-indol.vercel.app/
+
+**Admin Portal:** https://doctor-appointment-admin-chi.vercel.app/
+
+---
+
 ## 🚀 Features
 
 ### For Users (Patients):
@@ -18,7 +26,7 @@ A full-featured Doctor Appointment Booking System built using the **MERN stack**
 ✅ Login to doctor dashboard  
 ✅ Manage their upcoming appointments  
 ✅ Update doctor profile information  
-✅ Manage availability status to accept or block bookings 
+✅ Manage availability status to accept or block bookings  
 
 ### For Admin:
 ✅ Login to admin panel  
@@ -36,7 +44,7 @@ A full-featured Doctor Appointment Booking System built using the **MERN stack**
 **Authentication:** JWT  
 **Payments:** Razorpay  
 **Media Uploads:** Cloudinary  
-**Deployment:** Vercel
+**Deployment:** Vercel  
 
 ---
 
@@ -158,3 +166,4 @@ npm run dev
   - Admin
 
 ---
+
