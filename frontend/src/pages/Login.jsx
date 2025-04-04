@@ -5,9 +5,8 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-
-  const {backendUrl, token, setToken} = useContext(AppContext)
-  const navigate = useNavigate()
+  const { backendUrl, token, setToken } = useContext(AppContext);
+  const navigate = useNavigate();
 
   const [state, setState] = useState("Sign Up");
 
@@ -19,38 +18,41 @@ const Login = () => {
     event.preventDefault();
 
     try {
-      
-      if(state === 'Sign Up') {
-
-        const {data} = await axios.post(backendUrl + '/api/user/register', {name,password,email})
-        if(data.success) {
-          localStorage.setItem('token',data.token)
-          setToken(data.token)
+      if (state === "Sign Up") {
+        const { data } = await axios.post(backendUrl + "/api/user/register", {
+          name,
+          password,
+          email,
+        });
+        if (data.success) {
+          localStorage.setItem("token", data.token);
+          setToken(data.token);
         } else {
-          toast.error(data.message)
+          toast.error(data.message);
         }
-
       } else {
-        const {data} = await axios.post(backendUrl + '/api/user/login', {password,email})
-        if(data.success) {
-          localStorage.setItem('token',data.token)
-          setToken(data.token)
+        const { data } = await axios.post(backendUrl + "/api/user/login", {
+          password,
+          email,
+        });
+        if (data.success) {
+          localStorage.setItem("token", data.token);
+          setToken(data.token);
         } else {
-          toast.error(data.message)
+          toast.error(data.message);
         }
       }
-
     } catch (error) {
-      toast.error(error.message)
+      toast.error(error.message);
     }
   };
 
-  useEffect(()=>{
-    if(token) {
-      navigate('/')
+  useEffect(() => {
+    if (token) {
+      navigate("/");
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[token])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [token]);
 
   return (
     <form onSubmit={onSubmitHandler} className="min-h-[80vh] flex items-center">
@@ -95,7 +97,10 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" className="bg-primary text-white w-full py-2 rounded-md text-base">
+        <button
+          type="submit"
+          className="bg-primary text-white w-full py-2 rounded-md text-base"
+        >
           {state === "Sign Up" ? "Create Account" : "Login"}
         </button>
         {state === "Sign Up" ? (

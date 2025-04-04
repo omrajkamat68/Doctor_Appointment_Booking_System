@@ -4,8 +4,14 @@ import { assets } from "../../assets/assets";
 import { AppContext } from "../../context/AppContext";
 
 const DoctorDashboard = () => {
-  const { dToken, dashData, setDashData, getDashData, completeAppointment, cancelAppointment } =
-    useContext(DoctorContext);
+  const {
+    dToken,
+    dashData,
+    setDashData,
+    getDashData,
+    completeAppointment,
+    cancelAppointment,
+  } = useContext(DoctorContext);
 
   const { currency, slotDateFormat } = useContext(AppContext);
 
